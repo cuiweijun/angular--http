@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{
+				width:300px;
+				height:300px;
+				background:red;
+			}
+			.ss{
+				opacity: 0.3;
+			}
+		</style>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-controller="ctrl">
+	
+		<input type="checkbox" ng-model="va"/>显示
+		<div class="div" ng-if="va">
+			周明鑫是小狗
+		</div>
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+	app.controller('ctrl',function($scope){
+		$scope.aa=['div','ss'];
+		$scope.classname={div:'div',ss:'ss'}
+//		$scope.show=false;
+	});
+	
+	
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/angular.min.js">
+	</script>
+	<body  ng-app="">
+		<div class="div" ng-init="a=2">
+			<p>{{a}}</p>
+		</div>
+		<div ng-init="arr=['周明鑫','网熊熊','赵彤彤']">
+			<p>{{arr[0]}}</p>
+		</div>
+		<div ng-init="obj={'name':'于洋','sex':'男','age':26}">
+			{{obj.name}}
+		</div>
+		<input type="text" ng-model="va" />
+		<p ng-bind="va">/p>
+		
+	</body>
+</html>
+<script>
+	
+</script>

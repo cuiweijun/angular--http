@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-controller="ctrl">
+		<p ng-repeat="i in name" ng-click="f($index)">{{i}}+{{$index}}</p>
+		<input type="checkbox" ng-model="va"/>全选
+		<input type="checkbox" ng-checked="va"/>
+		<input type="checkbox" ng-checked="va"/>
+		<input type="checkbox" ng-checked="va"/>
+		
+		
+		<br />
+		<input type="radio"/>
+		
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+	app.controller('ctrl',function($scope){
+		$scope.name=['王亚','胡茂旭','马少瑞','刘志'];
+		$scope.va=true;
+		$scope.f=function(dd){
+			alert(dd)
+		}
+	});
+	
+	
+</script>

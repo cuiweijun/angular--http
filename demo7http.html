@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				.header ul{
+					list-style: none;
+				}
+				.list{
+					list-style: none;
+					margin:0;padding:0;
+				}
+				.list li{
+					width:150px;
+					height:60px;
+					float:left;
+					background:#ccc;
+					line-height: 60px;
+					text-align: center;
+				}
+				.ss{
+					/*border:1px solid red;*/
+				}
+				.ss li{
+					list-style: none;
+					padding: 0;margin:5px 0;
+					
+				}
+		</style>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-controller="ctrl">
+			
+		<ul class="list">
+			<li ng-repeat="i in arr" ng-click="f($index+1)">{{i}}</li>
+		</ul>
+		<div style="width:600px" class="ss">
+			<li ng-repeat="a in mes">{{a.text}}</li>
+		</div>
+			
+		
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+		app.controller('ctrl',function($scope,$http){
+			$scope.arr=['熊熊','赵彤','明星','敏姐'];
+			
+			$scope.f=function(dd){
+				$http({
+					"url":"http://127.0.0.1:8096/106angular/list.php",
+					"method":"GET",
+					"params":{"pid":dd},
+					"responseType":"json"
+				}).success(function(res){
+					$scope.mes=res
+	//				alert(res)
+				}).error(function(){})				
+			}
+			
+			
+			
+//			
+//			$http({
+//				"url":"http://127.0.0.1:8080/1.txt",
+//				"method":"GET"
+//			}).then(function(res){
+//				alert(res)
+//				$scope.mes=res.data
+//			},function(){
+//				
+//			});
+			
+			
+			
+			
+			
+			
+			
+		});
+	
+</script>

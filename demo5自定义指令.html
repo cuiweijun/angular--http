@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				.header ul{
+					list-style: none;
+				}
+				
+		</style>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-controller="ctrl">
+			
+		<!--	<lao-zhou></lao-zhou>-->
+		<!--<div lao-zhou>
+			
+		</div>-->
+		<div class="lao-zhou">
+			
+		</div>
+		
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+	app.directive('laoZhou',function(){
+		return{
+			restrict:"C",
+//			template:"<h1>河南人不偷井盖了</h1>",
+			templateUrl:"view/header.html"
+		}
+	})
+	
+</script>

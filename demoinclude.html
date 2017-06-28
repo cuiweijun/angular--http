@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				.header ul{
+					list-style: none;
+				}
+				
+		</style>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-controller="ctrl">
+		
+			{{money|currency:"￥"}}
+			{{time|date:"yyyy-MM-dd hh:mm:ss"}}
+			<!--<div ng-include="'view/header.html'">
+				<!--头部-->
+				<!--$('div').load('view/header.html',function(){})-->
+			<!--</div>
+			<p ng-cloak>-->
+				<!--<a ng-href="{{href}}">百度一下</a>
+				<img ng-src="{{img}}" alt="" />-->
+				<!--{{img}}
+			</p>-->
+			
+			<!--<div ng-include="'view/footer.html'">-->
+				<!--尾部-->
+			<!--</div>-->
+			
+		
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+	app.controller('ctrl',function($scope,$interval,$timeout){
+//		$scope.ur="view/header.html"
+		$scope.timer=$interval(function(){
+			$scope.time=new Date().getTime();
+		},1000);
+		$timeout(function(){
+			$interval.cancel($scope.timer)
+		},5000)
+		
+	});
+	
+	
+</script>

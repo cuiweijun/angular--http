@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/angular.min.js">
+	</script> 
+	<body  ng-app="myapp" ng-init="arr=['周明星','网熊熊','张明新']">
+		<ul>
+			<li ng-repeat="i in arr">{{i}}+{{$index}}</li>
+		</ul>
+		<ul ng-init="obj={'name':'tom','age':23,'sex':'女'}">
+			<li ng-repeat="i in obj">{{i}}</li>
+		</ul>
+		<ul ng-init="obj1={'name':'tom','age':23,'sex':'女'}">
+			<li ng-repeat="(k,v) in obj1">{{k}}+{{v}}</li>
+		</ul>		
+		
+	</body>
+</html>
+<script>
+	var app=angular.module('myapp',[]); //创建angular模块 []依赖模块
+	
+	
+	
+</script>
